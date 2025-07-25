@@ -24,4 +24,8 @@ jobs:
 
       - name: Run tests with pytest
         run: |
-          PYTHONPATH=. pytest
+          pip install -r requirements.txt
+          pytest --maxfail=1 --disable-warnings --tb=short
+        env:
+          PYTHONPATH: .
+
